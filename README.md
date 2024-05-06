@@ -1,3 +1,5 @@
+study and copy from https://space.bilibili.com/394995160
+
 # AUV-Path-Following-Simulation
 
 A 3D path following simulation platform for autonomous underwater vehicle on Matlab/Simulink.
