@@ -1,8 +1,8 @@
 close all
 
-X = simOut.logsout{17}.Values.Data;
-Y = simOut.logsout{18}.Values.Data;
-Z = simOut.logsout{19}.Values.Data;
+X = simOut.logsout{14}.Values.Data;
+Y = simOut.logsout{15}.Values.Data;
+Z = simOut.logsout{16}.Values.Data;
 
 WaypointsPlot = [P0;Waypoints];
 
@@ -26,3 +26,6 @@ set(gca,'ZDir','reverse');
 % xlabel('Time');
 % ylabel('maxerr');
 % title('Output Signal vs. Time');
+
+
+
