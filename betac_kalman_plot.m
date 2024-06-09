@@ -4,7 +4,7 @@
  %@E-mail：979951191@qq.com
  %@brief：卡尔曼滤波的小测试程序
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-function lcw_kalman_plot
+function betac_kalman_plot
 clear all
 clc;
 close all;
@@ -52,7 +52,7 @@ t = 1: lcw_length;
 y = xlcw(t); % 假设这里是获取数据的函数
 
 % 保存结果
-save('data.mat', 't', 'y');
+save('databc.mat', 't', 'y');
 
 % %画出状态和状态估计
 % figure;
