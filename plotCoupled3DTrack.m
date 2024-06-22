@@ -16,7 +16,7 @@ scatter3(WaypointsPlot(:,2),WaypointsPlot(:,1),WaypointsPlot(:,3),40,'o','Marker
 %zlim([0 0.6]);
 set(gca,'DataAspectRatio' ,[1 1 0.06]);
 legend({'Track','Task Path','Start','End','WPs'},'Location','best');legend('boxoff');
-xlabel('X[m]');ylabel('Y[m]');zlabel('Depth[m]');
+xlabel('Y[m]');ylabel('X[m]');zlabel('Depth[m]');
 set(gca,'ZDir','reverse');
 
 

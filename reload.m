@@ -1,27 +1,27 @@
 % 定义需要重复运行的次数
 %num_runs = 150;
-num_runs = 3;
+num_runs = 1;
 a = 1;
 % 循环执行仿真
 for i = a : num_runs
     % 设置参数
     rh = 0.005; % 随机生成参数1
-    rv = 0.002; % 随机生成参数2
+    rv = 0.003; % 随机生成参数2
     Deltah = 5;
     Deltav = 3;
-    brc = 85 + a; %49
+%     brc = 49 + a; %
         
     % 调用 Simulink 模型并传递参数
     simOut = sim('PID_Cdelta_U', 'SimulationMode', 'normal', 'SaveOutput', 'on', 'OutputSaveName', 'simOut', 'ExternalInput', '[]');
     
-    run('plotCoupled3DTrack.m');
+     run('plotCoupled3DTrack.m');
     
     
     
     % 获取仿真结果
     %simData = simOut.get('simOut');
-    maxerr = simOut.logsout{33};
-    Final_D = simOut.logsout{30};
+    maxerr = simOut.logsout{34};
+    Final_D = simOut.logsout{31};
     
     A = [a, brc, Final_D.Values.data(end) ,maxerr.Values.data(end)];
     
