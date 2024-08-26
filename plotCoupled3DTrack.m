@@ -1,12 +1,13 @@
 close all
 
-X = simOut.logsout{14}.Values.Data;
-Y = simOut.logsout{15}.Values.Data;
-Z = simOut.logsout{16}.Values.Data;
+X = simOut.logsout{15}.Values.Data;
+Y = simOut.logsout{16}.Values.Data;
+Z = simOut.logsout{17}.Values.Data;
 
 WaypointsPlot = [P0;Waypoints];
 
 figure;
+% plot3(WaypointsPlot(:,2),WaypointsPlot(:,1),WaypointsPlot(:,3),'--r','LineWidth',1.5);
 plot3(Y,X,Z,'-b',WaypointsPlot(:,2),WaypointsPlot(:,1),WaypointsPlot(:,3),'--r','LineWidth',1.5);
 hold on;grid on;
 scatter3(Y(1),X(1),Z(1),40,'p','filled','MarkerFaceColor','red');

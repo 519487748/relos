@@ -15,15 +15,17 @@ for i = a : num_runs
     simOut = sim('PID_Cdelta_U', 'SimulationMode', 'normal', 'SaveOutput', 'on', 'OutputSaveName', 'simOut', 'ExternalInput', '[]');
     
      run('plotCoupled3DTrack.m');
+     
     
     
     
     % 获取仿真结果
     %simData = simOut.get('simOut');
-    maxerr = simOut.logsout{34};
-    Final_D = simOut.logsout{31};
+    maxerr = simOut.logsout{35};
     
-    A = [a, brc, Final_D.Values.data(end) ,maxerr.Values.data(end)];
+    Final_D = simOut.logsout{32};
+    
+    A = [a, Final_D.Values.data(end) ,maxerr.Values.data(end)];
     
     if a == 1
         xlswrite('save_brc_test.xlsx', A, 'Sheet1');
@@ -40,7 +42,7 @@ for i = a : num_runs
     
     
     % 打印当前参数值和结果值
-    fprintf('Run %d finish: brc = %.4f, Final_D = %.4f, maxerr =%.4f \n',a , brc, Final_D.Values.data(end), maxerr.Values.data(end));
+    fprintf('Run %d finish:  Final_D = %.4f, maxerr =%.4f \n',a , Final_D.Values.data(end), maxerr.Values.data(end));
     a = a + 1;
 end
 
